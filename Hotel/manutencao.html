@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manutenção</title>
+</head>
+<body>
+    <script>
+        let valorMenor = Infinity
+        let empresaBarata
+        let nome = prompt("Qual seu nome?")
+        do{
+            let empresa = prompt("Qual o nome da empresa?")
+            let valores = Number(prompt("Qual o valor do aparelho?"))
+            let quantidade = parseInt(prompt("Qual a quantidade de aparelhos?"))
+            let desconto = parseInt(prompt("Qual a porcentagen de desconto?"))
+            let miniDesconto = parseInt(prompt("Qual o múmero mínimo de aparelhos para conseguir o desconto?"))
+
+            let valorTotal = valores * quantidade
+
+            if (quantidade >= miniDesconto){
+                let valorDesconto = (valorTotal * desconto) / 100
+                valorTotal -= valorDesconto
+            }
+
+            alert(`O serviço de ${empresa} custará ${valorTotal}`)
+
+            if (valorTotal < valorMenor) {
+                valorMenor = valorTotal
+                empresabarata = empresa
+            }
+        } while (prompt(`Deseja informar novos dados, ${nome}? (S/N)`).toLocaleUpperCase() === 'S') 
+
+        alert(`O orçamento de menor valor é o ${empresabarata} por ${menorValor}`)
+    </script>
+</body>
+</html>
